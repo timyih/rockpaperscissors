@@ -1,2 +1,5 @@
 # rockpaperscissors
 A game of rock, paper, scissors.
+
+9/7/22
+This is the next phase of my fullstack development studies. Been steadily learning JavaScript and now it's time to put it to the test. I will be creating a basic rock, paper, scissors game that lets the user play against the computer. The basic version of this game will have no interface and the game will be played completely from the console. Later, I will add an interface and maybe even add some more complexity (e.g. rock paper scissors lizard spock). By the end of this project, I'll have a better understanding of JavaScript. Already throughout learning, I have noticed that my background in Computer Engineering is very helpful. I'm using this experience as not only a way to learn something new and practical, but also to brush up on and improve my original coding and problem-solving skills that I had gained from a few years of college. Hopefully, I'll be able to kill two birds with one stone and not have to do too much LeetCode (blegh).
