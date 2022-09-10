@@ -43,6 +43,35 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+
+    let playerChoice;
+
+    for (let i = 0; i < 5; i++){
+        playerChoice = window.prompt("Type rock, paper, or scissors");
+        if (playerChoice.toLowerCase() !== "rock" || playerChoice.toLowerCase() !== "paper" || playerChoice.toLowerCase() !== "scissors") {
+            console.log("Really? Couldn't stick to the options provided? Now the whole game is screwed and you gotta restart.");
+            return "Reload the page dummy.";
+        }
+        let outcome = playRound(playerChoice, getComputerChoice());
+        if (outcome === 1) {
+            playerScore++;
+        } else if (outcome === 0) {
+            computerScore++;
+        } else {
+            // Nothing happens
+        }
+    }
+
+    if (playerScore > computerScore) {
+        return "You won! The score was: " + playerScore + " to " + computerScore;
+    } else {
+        return "You lose! The score was: " + playerScore + " to " + computerScore;
+    }
+}
+
 const playerSelection = "ROck";
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
