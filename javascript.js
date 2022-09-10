@@ -47,14 +47,12 @@ function game() {
     let playerScore = 0;
     let computerScore = 0;
 
-    let playerChoice;
-
     for (let i = 0; i < 5; i++){
-        playerChoice = window.prompt("Type rock, paper, or scissors");
-        if (playerChoice.toLowerCase() !== "rock" || playerChoice.toLowerCase() !== "paper" || playerChoice.toLowerCase() !== "scissors") {
+        let playerChoice = window.prompt("Type rock, paper, or scissors").toLowerCase();
+        /* if (playerChoice !== "rock" || playerChoice !== "paper" || playerChoice !== "scissors") {
             console.log("Really? Couldn't stick to the options provided? Now the whole game is screwed and you gotta restart.");
             return "Reload the page dummy.";
-        }
+        } */
         let outcome = playRound(playerChoice, getComputerChoice());
         if (outcome === 1) {
             playerScore++;
@@ -66,12 +64,15 @@ function game() {
     }
 
     if (playerScore > computerScore) {
-        return "You won! The score was: " + playerScore + " to " + computerScore;
+        console.log("You won! The score was: " + playerScore + " to " + computerScore);
+        return true;
+    } else if (computerScore > playerScore) {
+        console.log("You lose! The score was: " + playerScore + " to " + computerScore);
+        return false;
     } else {
-        return "You lose! The score was: " + playerScore + " to " + computerScore;
+        console.log("Tie! The score was: " + playerScore + " to " + computerScore);
+        return false;
     }
 }
 
-const playerSelection = "ROck";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+game();
